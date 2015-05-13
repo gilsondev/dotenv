@@ -72,6 +72,7 @@ NeoBundle 'gilsondev/vim-snippets'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'morhetz/gruvbox'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -172,7 +173,8 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme hybrid
+  set background=dark
+  colorscheme gruvbox
 endif
 
 set mousemodel=popup
