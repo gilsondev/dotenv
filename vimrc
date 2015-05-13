@@ -71,6 +71,7 @@ NeoBundle 'gilsondev/vim-snippets'
 "" Color
 NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'w0ng/vim-hybrid'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -171,7 +172,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme Tomorrow-Night
+  colorscheme hybrid
 endif
 
 set mousemodel=popup
