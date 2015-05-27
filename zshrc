@@ -78,6 +78,11 @@ eval "$(jenv init -)"
 # Apache Ant
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 
+# Groovy
+export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+export PATH="$HOME/.gvm/grails/current/bin:$PATH"
+source "$HOME/.gvm/bin/gvm-init.sh"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -104,3 +109,6 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/gilson/.gvm/bin/gvm-init.sh" ]] && source "/home/gilson/.gvm/bin/gvm-init.sh"
