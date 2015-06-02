@@ -100,6 +100,9 @@ NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'mattn/emmet-vim'
 
+"" LESS Bundle
+NeoBundle 'groenewege/vim-less'
+
 
 
 "" Include user's extra bundle
