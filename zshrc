@@ -72,8 +72,8 @@ source $ZSH/oh-my-zsh.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+#export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
 
 # Apache Ant
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
@@ -82,6 +82,10 @@ export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
 export PATH="$HOME/.gvm/grails/current/bin:$PATH"
 source "$HOME/.gvm/bin/gvm-init.sh"
+
+# NVM
+source ~/.nvm/nvm.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
