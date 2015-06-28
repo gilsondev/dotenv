@@ -45,7 +45,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenvwrapper)
+plugins=(git)
 
 # User configuration
 
@@ -53,7 +53,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Autoenv
-source ~/.autoenv/activate.sh
+# source ~/.autoenv/activate.sh
 
 # Pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -112,7 +112,6 @@ source ~/.nvm/nvm.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/gilson/.gvm/bin/gvm-init.sh" ]] && source "/home/gilson/.gvm/bin/gvm-init.sh"

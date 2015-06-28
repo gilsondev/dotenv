@@ -30,6 +30,10 @@ if [ -L "~/.gitconfig" ]; then
 	ln -s ~/.dotenv/gitconfig ~/.gitconfig
 fi
 
+# Install Java
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update
+sudo apt-get install oracle-java7-installer -y
 
 # Install NVM
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
