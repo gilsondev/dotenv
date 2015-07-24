@@ -19,3 +19,5 @@
 	grep = auto
 	interactive = auto
 	status = auto
+[url "https://"]
+	insteadOf = git://

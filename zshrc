@@ -45,7 +45,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git archlinux)
 
 # User configuration
 
@@ -53,7 +53,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Autoenv
-# source ~/.autoenv/activate.sh
+source ~/.autoenv/activate.sh
 
 # Pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -61,6 +61,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # eval "$(pyenv init -)"
 
 # Virtualenvwrapper
+source /usr/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects
 
