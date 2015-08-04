@@ -81,6 +81,9 @@ let g:vim_bootstrap_langs = "javascript,python,html"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
 
 "" Custom bundles
+NeoBundle "tpope/vim-surround"
+NeoBundle "terryma/vim-multiple-cursors"
+NeoBundle "jiangmiao/auto-pairs"
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
