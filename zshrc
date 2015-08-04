@@ -5,7 +5,7 @@ export ZSH=/home/gilson/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="simple"
+ZSH_THEME="bullet-train"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,6 +52,9 @@ plugins=(git archlinux)
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Bullet Train
+BULLETTRAIN_TIME_SHOW=false
+
 # Autoenv
 source ~/.autoenv/activate.sh
 
@@ -59,6 +62,8 @@ source ~/.autoenv/activate.sh
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
+
+export TERM="xterm-256color"
 
 # Virtualenvwrapper
 source /usr/bin/virtualenvwrapper.sh

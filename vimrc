@@ -87,6 +87,8 @@ NeoBundle "davidhalter/jedi-vim"
 NeoBundle "scrooloose/syntastic"
 NeoBundle "majutsushi/tagbar"
 NeoBundle "Yggdroot/indentLine"
+NeoBundle "hdima/python-syntax"
+NeoBundle "klen/python-mode"
 
 
 "" Javascript Bundle
@@ -103,6 +105,9 @@ NeoBundle 'mattn/emmet-vim'
 "" LESS Bundle
 NeoBundle 'groenewege/vim-less'
 
+"" PHP Bundle
+NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'docteurklein/vim-symfony'
 
 
 "" Include user's extra bundle
