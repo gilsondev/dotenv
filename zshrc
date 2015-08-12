@@ -64,10 +64,10 @@ source ~/.autoenv/activate.sh
 # eval "$(pyenv init -)"
 
 # export TERM="xterm-256color"
-export TERM="screen-256color"
+export TERM="xterm-256color"
 
 # Virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects
 
