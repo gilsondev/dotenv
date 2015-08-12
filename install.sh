@@ -24,3 +24,7 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 
 # Install ZSH theme
 cp -Rvf zsh_themes/bullet-train.zsh-theme ~/.oh-my-zsh/themes/
+
+# Install tmux and TPM
+sudo pacman -S --noconfirm tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
