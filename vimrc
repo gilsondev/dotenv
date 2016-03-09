@@ -74,7 +74,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'jpo/vim-railscasts-theme'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -211,15 +212,10 @@ else
   endif
 endif
 
-if &term =~ '256color'
-  set t_ut=256
-endif
-
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
   set background=dark
 
-  let g:solarized_termcolors=256
   colorscheme hybrid
 endif
 
@@ -294,7 +290,7 @@ let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 20
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,node_modules,vendors
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
@@ -475,6 +471,9 @@ let g:jedi#completions_command = "<C-Space>"
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
 let g:syntastic_python_flake8_post_args='--ignore=W391'
+
+" python-mode
+let g:pymode_folding = 1
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
