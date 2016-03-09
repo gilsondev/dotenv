@@ -1,8 +1,7 @@
 # Original author: Michalis Georgiou <mechmg93@gmail.comr>
 # Modified by Andrew http://www.webupd8.org <andrew@webupd8.org>
 
-# sudo apt-get install mercurial
-sudo pacman -S mercurial
+sudo apt-get install mercurial
 
 _hgroot="https://googlefontdirectory.googlecode.com/hg/"
 _hgrepo="googlefontdirectory"

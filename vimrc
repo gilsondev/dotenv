@@ -43,6 +43,7 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'vim-scripts/grep.vim'
@@ -73,6 +74,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'altercation/vim-colors-solarized'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -182,16 +184,11 @@ syntax on
 set ruler
 set number
 
-let no_buffers_menu=1
-if !exists('g:not_finsh_neobundle')
-  set background=dark
-  colorscheme gruvbox
-endif
 
 set mousemodel=popup
 set t_Co=256
 set nocursorline
-set guioptions=egrti
+set guioptions=egti
 set gfn=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
 set columns=130
 set lines=32
@@ -215,7 +212,15 @@ else
 endif
 
 if &term =~ '256color'
-  set t_ut=
+  set t_ut=256
+endif
+
+let no_buffers_menu=1
+if !exists('g:not_finsh_neobundle')
+  set background=dark
+
+  let g:solarized_termcolors=256
+  colorscheme hybrid
 endif
 
 "" Disable the blinking cursor.
