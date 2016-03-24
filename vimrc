@@ -1,119 +1,86 @@
-"*****************************************************************************
-"" NeoBundle core
-"*****************************************************************************
-
 if has('vim_starting')
   set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
-
-if !filereadable(neobundle_readme)
-  echo "Installing NeoBundle..."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
-  let g:not_finsh_neobundle = "yes"
-
-  " Run shell script if exist on custom select language
-  
-  silent !\curl -sSL https://raw.githubusercontent.com/avelino/vim-bootstrap/master/vim_template/langs/python/python.sh | bash -s stable
-  
-  silent !\curl -sSL https://raw.githubusercontent.com/avelino/vim-bootstrap/master/vim_template/langs/javascript/javascript.sh | bash -s stable
-  
-  silent !\curl -sSL https://raw.githubusercontent.com/avelino/vim-bootstrap/master/vim_template/langs/html/html.sh | bash -s stable
-  
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+filetype plugin indent on
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+
+call plug#begin('~/.vim/plugged')
+
 
 "*****************************************************************************
-"" NeoBundle install packages
+"" Install packages
 "*****************************************************************************
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/CSApprox'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/grep.vim'
+Plug 'vim-scripts/CSApprox'
+Plug 'bronson/vim-trailing-whitespace'
+
 if v:version > 702
-	NeoBundle 'Shougo/vimshell.vim'
+	Plug 'Shougo/vimshell.vim'
 endif
 
 "" Vim-Session
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
 "" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'gilsondev/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'gilsondev/vim-snippets'
 
 "" Color
-NeoBundle 'tomasr/molokai'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'jpo/vim-railscasts-theme'
-
-"" Vim-Bootstrap Updater
-NeoBundle 'sherzberg/vim-bootstrap-updater'
-
-let g:vim_bootstrap_langs = "javascript,python,html"
-let g:vim_bootstrap_editor = "vim"				" nvim or vim
+Plug 'godlygeek/csapprox'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'altercation/vim-colors-solarized'
 
 "" Custom bundles
-NeoBundle "tpope/vim-surround"
-NeoBundle "terryma/vim-multiple-cursors"
-NeoBundle "jiangmiao/auto-pairs"
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
 
 "" Python Bundle
-NeoBundle "davidhalter/jedi-vim"
-NeoBundle "scrooloose/syntastic"
-NeoBundle "majutsushi/tagbar"
-NeoBundle "Yggdroot/indentLine"
-NeoBundle "hdima/python-syntax"
-NeoBundle "klen/python-mode"
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'Yggdroot/indentLine'
+Plug 'hdima/python-syntax', {'for': 'python'}
+Plug 'klen/python-mode', {'for': 'python'}
+Plug 'chongkim/vim-django-test', {'for': 'python'}
 
 
 "" Javascript Bundle
-NeoBundle "scrooloose/syntastic"
-
+Plug 'scrooloose/syntastic'
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'othree/yajs.vim', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'elzr/vim-json'
 
 "" HTML Bundle
-NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'gorodinskiy/vim-coloresque'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'mattn/emmet-vim'
+Plug 'amirh/HTML-AutoCloseTag'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
 
 "" LESS Bundle
-NeoBundle 'groenewege/vim-less'
+Plug 'groenewege/vim-less'
 
 "" PHP Bundle
-NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'docteurklein/vim-symfony'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'docteurklein/vim-symfony', {'for': 'php'}
 
 
 "" Include user's extra bundle
@@ -121,14 +88,9 @@ if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
 
-call neobundle#end()
+call plug#end()
 
-" Required:
-filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "*****************************************************************************
 "" Basic Setup
@@ -203,6 +165,7 @@ else
   let g:CSApprox_loaded = 1
 
   if $COLORTERM == 'gnome-terminal'
+	set term=xterm-256color
     " set term=gnome-256color
 	" set term=builtin_gui
   else
@@ -216,7 +179,7 @@ let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
   set background=dark
 
-  colorscheme hybrid
+  colorscheme solarized
 endif
 
 "" Disable the blinking cursor.
@@ -303,11 +266,7 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
 " terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
+nnoremap <silent> <leader>sh :VimShellCreate<CR>
 
 "*****************************************************************************
 "" Functions
@@ -417,6 +376,8 @@ let g:syntastic_aggregate_errors = 1
 "" Copy/Paste/Cut
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
+else
+  set clipboard=unnamed
 endif
 
 noremap YY "+y<CR>
@@ -458,6 +419,9 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+			\ formatoptions+=croq softtabstop=2 smartindent
+
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -486,8 +450,12 @@ let g:tagbar_autofocus = 1
 
 let g:javascript_enable_domhtmlcss = 1
 
-
-
+" Vim Django Test
+let g:django_test_command = "./manage.py test -v 1 -n {test}"
+map <Leader>dt :call DjangoTestRunCurrentTestFile()<CR>
+map <Leader>ds :call DjangoTestRunNearestTest()<CR>
+map <Leader>dl :call DjangoTestRunLastTest()<CR>
+map <Leader>da :call DjangoTestRunAllTests()<CR>
 
 
 "" Include user's local vim config
