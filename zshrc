@@ -45,7 +45,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux)
+plugins=(git)
 
 # User configuration
 
@@ -67,7 +67,8 @@ source ~/.autoenv/activate.sh
 export TERM="xterm-256color"
 
 # Virtualenvwrapper
-source /usr/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects
 
@@ -86,9 +87,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 
 # Groovy
-export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
-export PATH="$HOME/.gvm/grails/current/bin:$PATH"
-source "$HOME/.gvm/bin/gvm-init.sh"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 # NVM
 source ~/.nvm/nvm.sh
@@ -122,3 +121,7 @@ alias open="xdg-open"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/gilson/.gvm/bin/gvm-init.sh" ]] && source "/home/gilson/.gvm/bin/gvm-init.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gilson/.sdkman"
+[[ -s "/home/gilson/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gilson/.sdkman/bin/sdkman-init.sh"
