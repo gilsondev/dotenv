@@ -4,12 +4,17 @@
 git submodule init
 git submodule update
 
+# Create directories
+mkdir -p ~/.local/bin
+
 # Create symbol links
 ln -s ~/.dotenv/zshrc ~/.zshrc
 ln -s ~/.dotenv/autoenv ~/.autoenv
 ln -s ~/.dotenv/vimrc ~/.vimrc
 ln -s ~/.dotenv/gitconfig ~/.gitconfig
 ln -s ~/.dotenv/tmux.conf ~/.tmux.conf
+ln -s ~/.dotenv/xflux ~/.local/bin/xflux
+ln -s ~/.dotenv/xflux.desktop ~/.config/autostart/xflux.desktop
 
 # Install NVM
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash

@@ -23,6 +23,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ryanoasis/vim-devicons'
 
 if v:version > 702
 	Plug 'Shougo/vimshell.vim'
@@ -37,13 +40,13 @@ Plug 'SirVer/ultisnips'
 Plug 'gilsondev/vim-snippets'
 
 "" Color
-Plug 'godlygeek/csapprox'
 Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
 
 "" Custom bundles
 Plug 'tpope/vim-surround'
@@ -57,6 +60,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'hdima/python-syntax', {'for': 'python'}
 Plug 'klen/python-mode', {'for': 'python'}
+Plug 'tweekmonster/django-plus.vim'
 Plug 'chongkim/vim-django-test', {'for': 'python'}
 
 
@@ -166,8 +170,6 @@ else
 
   if $COLORTERM == 'gnome-terminal'
 	set term=xterm-256color
-    " set term=gnome-256color
-	" set term=builtin_gui
   else
     if $TERM == 'xterm'
       set term=xterm-256color
@@ -179,7 +181,7 @@ let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
   set background=dark
 
-  colorscheme solarized
+  colorscheme dracula
 endif
 
 "" Disable the blinking cursor.
@@ -417,13 +419,14 @@ augroup vimrc-python
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoptions+=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+  	  \ completeopt-=preview
 augroup END
 
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 			\ formatoptions+=croq softtabstop=2 smartindent
 
 " jedi-vim
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
@@ -431,6 +434,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
+let g:jedi#use_tabs_not_buffers = 1
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
@@ -438,6 +442,8 @@ let g:syntastic_python_flake8_post_args='--ignore=W391'
 
 " python-mode
 let g:pymode_folding = 1
+let g:pymode_virtualenv = 1
+let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
