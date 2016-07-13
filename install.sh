@@ -15,6 +15,7 @@ ln -s ~/.dotenv/gitconfig ~/.gitconfig
 ln -s ~/.dotenv/tmux.conf ~/.tmux.conf
 ln -s ~/.dotenv/xflux ~/.local/bin/xflux
 ln -s ~/.dotenv/xflux.desktop ~/.config/autostart/xflux.desktop
+ln -s ~/.dotenv/zsh-wakatime ~/.oh-my-zsh/custom/plugins/zsh-wakatime
 
 # Install NVM
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
@@ -26,6 +27,14 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 cp -Rvf zsh_themes/bullet-train.zsh-theme ~/.oh-my-zsh/themes/
 
 # Install tmux and TPM
-#sudo pacman -S --noconfirm tmux
-sudo apt-get install tmux
+if [ -f /etc/debian_version ]; then
+	sudo apt-get install tmux zsh vim vim-gnome
+elif [ -f /etc/redhat-release ]; then
+	sudo dnf install tmux zsh vim vim-X11
+elif [ -f /etc/fedora-release ]; then
+	sudo dnf install tmux zsh vim vim-X11
+elif [ -f /etc/arch-release ]; then
+	sudo pacman -S --noconfirm tmux zsh vim
+fi
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

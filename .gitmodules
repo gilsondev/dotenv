@@ -4,3 +4,6 @@
 [submodule "powerline"]
 	path = powerline
 	url = https://github.com/powerline/powerline
+[submodule "zsh-wakatime"]
+	path = zsh-wakatime
+	url = https://github.com/wbinglee/zsh-wakatime.git

@@ -47,7 +47,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-wakatime)
 
 # User configuration
 
@@ -85,11 +85,19 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PATH="$HOME/.jenv/bin:$PATH"
 #eval "$(jenv init -)"
 
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # Apache Ant
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 
-# Groovy
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+# Apache Maven
+export PATH="/opt/Java/apache-maven-3.3.9/bin:$PATH"
+
+# Java
+export JAVA_HOME="/usr/java/jdk1.7.0_79"
+export PATH=$JAVA_HOME/bin:$PATH
 
 # NVM
 source ~/.nvm/nvm.sh
@@ -127,3 +135,4 @@ alias open="xdg-open"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/gilson/.sdkman"
 [[ -s "/home/gilson/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gilson/.sdkman/bin/sdkman-init.sh"
+

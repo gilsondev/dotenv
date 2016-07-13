@@ -26,6 +26,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ryanoasis/vim-devicons'
+Plug 'wakatime/vim-wakatime'
 
 if v:version > 702
 	Plug 'Shougo/vimshell.vim'
@@ -360,7 +361,7 @@ let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 
 " snippets
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<tab><tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
