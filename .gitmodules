@@ -7,3 +7,6 @@
 [submodule "zsh-wakatime"]
 	path = zsh-wakatime
 	url = https://github.com/wbinglee/zsh-wakatime.git
+[submodule "dracula_zsh"]
+	path = dracula_zsh
+	url = https://github.com/dracula/zsh.git

@@ -16,6 +16,7 @@ ln -s ~/.dotenv/tmux.conf ~/.tmux.conf
 ln -s ~/.dotenv/xflux ~/.local/bin/xflux
 ln -s ~/.dotenv/xflux.desktop ~/.config/autostart/xflux.desktop
 ln -s ~/.dotenv/zsh-wakatime ~/.oh-my-zsh/custom/plugins/zsh-wakatime
+ln -s ~/.dotenv/dracula_zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
 
 # Install NVM
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
@@ -37,4 +38,11 @@ elif [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm tmux zsh vim
 fi
 
+# Tmux Plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Jenv
+git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+
+# Plug Vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
