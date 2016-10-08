@@ -47,7 +47,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-wakatime)
+plugins=(git zsh-wakatime docker-compose gulp bower colorize fedora)
 
 # User configuration
 
@@ -70,7 +70,7 @@ export TERM="xterm-256color"
 
 # Virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects
 
@@ -86,8 +86,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #eval "$(jenv init -)"
 
 # jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
 
 # Apache Ant
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
@@ -101,6 +101,9 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 # NVM
 source ~/.nvm/nvm.sh
+
+# Composer
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 
 # You may need to manually set your language environment

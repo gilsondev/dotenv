@@ -10,3 +10,6 @@
 [submodule "dracula_zsh"]
 	path = dracula_zsh
 	url = https://github.com/dracula/zsh.git
+[submodule "docker-compose_zsh"]
+	path = docker-compose_zsh
+	url = git@github.com:sroze/docker-compose-zsh-plugin.git
