@@ -48,6 +48,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Valloric/YouCompleteMe'
 
 
 let g:make = 'gmake'
@@ -75,6 +77,8 @@ Plug 'gilsondev/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'dracula/vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 "" Custom bundles
 "" Python Bundle
@@ -89,6 +93,14 @@ Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'elzr/vim-json'
+
+"" Typescript Bundle
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/unite.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install' }
+Plug 'mhartington/vim-typings'
 
 "" HTML Bundle
 Plug 'amirh/HTML-AutoCloseTag'
@@ -168,6 +180,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
+  " colorscheme Tomorrow-Night-Eighties
   colorscheme dracula
 endif
 
@@ -447,6 +460,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 
 "" Custom configs
 
+augroup vimrc-typescript
+  autocmd FileType typescript setlocal completeopt+=menu,preview
+  au BufRead,BufNewFile *.ts  setlocal filetype=typescript
+augroup END
+
 " vim-python
 augroup vimrc-python
   autocmd!
@@ -471,6 +489,13 @@ let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
+
+" Tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" Typescript syntax
+let g:typescript_indent_disable = 1
 
 
 let g:tagbar_type_go = {

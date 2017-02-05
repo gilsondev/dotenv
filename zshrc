@@ -82,8 +82,8 @@ source $ZSH/oh-my-zsh.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-#export PATH="$HOME/.jenv/bin:$PATH"
-#eval "$(jenv init -)"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # jenv
 # export PATH="$HOME/.jenv/bin:$PATH"
@@ -96,7 +96,8 @@ export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 export PATH="/opt/Java/apache-maven-3.3.9/bin:$PATH"
 
 # Java
-export JAVA_HOME="/usr/java/jdk1.7.0_79"
+#export JAVA_HOME="/usr/java/jdk1.7.0_79"
+export JAVA_HOME="/usr/java/jdk1.8.0_101"
 export PATH=$JAVA_HOME/bin:$PATH
 
 # NVM
