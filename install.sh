@@ -47,3 +47,7 @@ git clone https://github.com/gcuisinier/jenv.git ~/.jenv
 
 # Plug Vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install i3WM Settings
+ln -s ~/.dotenv/i3 ~/.i3
+ln -s ~/.dotenv/screenlayout ~/.screenlayout
