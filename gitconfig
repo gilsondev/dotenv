@@ -2,7 +2,7 @@
 	name = gilsondev
 	email = me@gilsondev.in
 [core]
-	editor = gvim -f
+	editor = vim
 [alias]
 	st = status
 	co = checkout

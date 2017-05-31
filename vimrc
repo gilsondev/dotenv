@@ -180,8 +180,8 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  " colorscheme Tomorrow-Night-Eighties
-  colorscheme dracula
+	colorscheme solarized
+	set background=light
 endif
 
 set mousemodel=popup

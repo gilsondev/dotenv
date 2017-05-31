@@ -69,7 +69,7 @@ source ~/.autoenv/activate.sh
 export TERM="xterm-256color"
 
 # Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source /usr/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects
@@ -82,22 +82,16 @@ source $ZSH/oh-my-zsh.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# jenv
-# export PATH="$HOME/.jenv/bin:$PATH"
-# eval "$(jenv init -)"
 
 # Apache Ant
 export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
 
 # Apache Maven
-export PATH="/opt/Java/apache-maven-3.3.9/bin:$PATH"
+export PATH="/opt/Java/apache-maven/bin:$PATH"
 
 # Java
 #export JAVA_HOME="/usr/java/jdk1.7.0_79"
-export JAVA_HOME="/usr/java/jdk1.8.0_101"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
 # NVM
