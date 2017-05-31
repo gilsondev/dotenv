@@ -27,7 +27,12 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 # Install ZSH theme
 cp -Rvf zsh_themes/bullet-train.zsh-theme ~/.oh-my-zsh/themes/
 
+# Install ZSH Syntax Highlight
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting
+
 # Create symbol links
+rm -rf ~/.zshrc
+rm -rf ~/.tmux.conf
 ln -s ~/.dotenv/zshrc ~/.zshrc
 ln -s ~/.dotenv/autoenv ~/.autoenv
 ln -s ~/.dotenv/vimrc ~/.vimrc

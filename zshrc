@@ -100,6 +100,9 @@ source ~/.nvm/nvm.sh
 # Composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+# ZSH Syntax Highlight
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

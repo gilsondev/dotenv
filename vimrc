@@ -180,8 +180,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-	colorscheme solarized
-	set background=light
+	colorscheme dracula
 endif
 
 set mousemodel=popup
