@@ -13,7 +13,7 @@ if [ -f /etc/debian_version ]; then
 elif [ -f /etc/redhat-release ]; then
 	sudo dnf install tmux zsh vim vim-X11
 elif [ -f /etc/fedora-release ]; then
-	sudo dnf install tmux zsh vim vim-X11
+	sudo dnf install tmux zsh vim neovim ctags xclip
 elif [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm tmux zsh vim
 fi
