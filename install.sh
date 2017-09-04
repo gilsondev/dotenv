@@ -43,6 +43,8 @@ ln -s ~/.dotenv/xflux.desktop ~/.config/autostart/xflux.desktop
 ln -s ~/.dotenv/zsh-wakatime ~/.oh-my-zsh/custom/plugins/zsh-wakatime
 ln -s ~/.dotenv/docker-compose_zsh ~/.oh-my-zsh/plugins/docker-compose_zsh
 ln -s ~/.dotenv/dracula_zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
+ln -s ~/.dotenv/redshift.conf ~/.config
+ln -s ~/.dotenv/nvim ~/.config
 
 # Tmux Plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -51,7 +53,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/gcuisinier/jenv.git ~/.jenv
 
 # Plug Vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install i3WM Settings
 ln -s ~/.dotenv/i3 ~/.i3

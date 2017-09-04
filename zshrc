@@ -101,7 +101,7 @@ source ~/.nvm/nvm.sh
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # ZSH Syntax Highlight
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # You may need to manually set your language environment
@@ -137,3 +137,9 @@ alias open="xdg-open"
 export SDKMAN_DIR="/home/gilson/.sdkman"
 [[ -s "/home/gilson/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gilson/.sdkman/bin/sdkman-init.sh"
 
+# v: Neovim (if exists) or Vim
+if command -v nvim 2>&1 >/dev/null; then
+    alias v='nvim'
+else
+    alias v='vim'
+fi
