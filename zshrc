@@ -140,6 +140,7 @@ export SDKMAN_DIR="/home/gilson/.sdkman"
 # v: Neovim (if exists) or Vim
 if command -v nvim 2>&1 >/dev/null; then
     alias v='nvim'
+    alias vim='nvim'
 else
     alias v='vim'
 fi
