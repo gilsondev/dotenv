@@ -25,6 +25,9 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
+" Python host
+let g:python_host_prog = '/home/gilson/Developer/.venv/bin/python'
+
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -112,6 +115,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
 
 " css
 " CSS Bundle
@@ -133,6 +137,9 @@ Plug 'arnaud-lb/vim-php-namespace'
 
 " python
 "" Python Bundle
+Plug 'klen/python-mode'
+Plug 'hdima/python-syntax'
+Plug 'jmcantrell/vim-virtualenv'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'fisadev/vim-isort'
@@ -418,8 +425,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" Neomake ------------------------------
-
+"" Neomake
 " Run linter on write
 autocmd! BufWritePost * Neomake
 
@@ -589,6 +595,10 @@ let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
+
+" python-mode
+let g:pymode_rope = 0
+let g:pymode_lint = 0
 
 " Syntax highlight
 " Default highlight is better than polyglot
