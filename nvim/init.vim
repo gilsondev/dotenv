@@ -103,7 +103,16 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/YankRing.vim'
 
 " Linters
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+
+" Tab on insert mode
+Plug 'ervandew/supertab'
+
+" Run unit test
+Plug 'janko-m/vim-test'
+
+" Zeal integration
+Plug 'kabbamine/zeavim.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -146,6 +155,9 @@ Plug 'fisadev/vim-isort'
 " Python autocompletion
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 
+" markdown
+"" Markdown Bundle
+Plug 'plasticboy/vim-markdown'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -427,7 +439,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Neomake
 " Run linter on write
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 "" fzf.vim
 set wildmode=list:longest,list:full
@@ -507,7 +519,7 @@ if has('macunix')
 endif
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
+noremap <leader>zz :bp<CR>
 noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
@@ -534,6 +546,9 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+"" Vim Test
+nnoremap <leader>t :TestFile<CR>
 
 "*****************************************************************************
 "" Custom configs
@@ -599,11 +614,15 @@ let g:airline#extensions#virtualenv#enabled = 1
 " python-mode
 let g:pymode_rope = 0
 let g:pymode_lint = 0
+let g:pymode_lint_ignore = "E501,C0111,W"
 
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
+
+" Markdown
+let g:vim_markdown_folding_style_pythonic = 1
 
 
 "*****************************************************************************
