@@ -94,6 +94,9 @@ export PATH="/opt/Java/apache-maven/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
+# Anaconda
+export PATH=$HOME/Projects/.anaconda3/bin:$PATH
+
 # NVM
 source ~/.nvm/nvm.sh
 

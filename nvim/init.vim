@@ -27,6 +27,7 @@ endif
 
 " Python host
 let g:python_host_prog = '/home/gilson/Developer/.venv/bin/python'
+let g:python3_host_prog = '/home/gilson/Developer/.venv/bin/python'
 
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
@@ -101,6 +102,9 @@ Plug 'tpope/vim-surround'
 
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
+
+" Fast folding
+Plug 'Konfekt/FastFold'
 
 " Linters
 " Plug 'neomake/neomake'
@@ -182,6 +186,9 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
+
+" Disable folding (Python mode slow fold)
+" set nofoldenable
 
 
 "" Fix backspace indent
