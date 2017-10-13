@@ -11,9 +11,9 @@ mkdir -p ~/.local/bin
 if [ -f /etc/debian_version ]; then
 	sudo apt-get install tmux zsh vim vim-gnome
 elif [ -f /etc/redhat-release ]; then
-	sudo dnf install tmux zsh vim vim-X11
+	sudo dnf install tmux zsh neovim
 elif [ -f /etc/fedora-release ]; then
-	sudo dnf install tmux zsh vim neovim ctags xclip
+	sudo dnf install tmux zsh neovim ctags xclip
 elif [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm tmux zsh vim
 fi
@@ -59,3 +59,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 # Install i3WM Settings
 ln -s ~/.dotenv/i3 ~/.i3
 ln -s ~/.dotenv/screenlayout ~/.screenlayout
+
+# Nova Theme (Gnome Shell)
+sh ./nova_install.sh

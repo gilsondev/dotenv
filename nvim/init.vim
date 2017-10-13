@@ -91,6 +91,7 @@ Plug 'dracula/vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'joshdick/onedark.vim'
+Plug 'trevordmiller/nova-vim'
 
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -260,7 +261,7 @@ if !exists('g:not_finish_vimplug')
 
 	let g:onedark_termcolors=256
 
-	colorscheme onedark
+	colorscheme nova
 endif
 
 set mousemodel=popup
