@@ -9,7 +9,10 @@ mkdir -p ~/.local/bin
 
 # Install tmux and TPM
 if [ -f /etc/debian_version ]; then
-	sudo apt-get install tmux zsh vim vim-gnome
+	sudo apt-get install -y tmux zsh
+	sudo add-apt-repository ppa:neovim-ppa/stable -y
+	sudo apt-get update
+	sudo apt-get install -y neovim
 elif [ -f /etc/redhat-release ]; then
 	sudo dnf install tmux zsh neovim
 elif [ -f /etc/fedora-release ]; then

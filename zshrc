@@ -6,7 +6,7 @@ export ZSH=/home/gilson/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="bullet-train"
-ZSH_THEME="dracula"
+ZSH_THEME="robbyrussell"
 
 
 # Uncomment the following line to use case-sensitive completion.
