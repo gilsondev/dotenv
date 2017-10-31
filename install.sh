@@ -64,4 +64,7 @@ ln -s ~/.dotenv/i3 ~/.i3
 ln -s ~/.dotenv/screenlayout ~/.screenlayout
 
 # Nova Theme (Gnome Shell)
-sh ./nova_install.sh
+sh ./nova_install.sh Default
+
+# Powerline
+pip install --user git+git://github.com/powerline/powerline
