@@ -69,10 +69,10 @@ source ~/.autoenv/activate.sh
 export TERM="xterm-256color"
 
 # Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-source /usr/bin/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/Developer/.virtualenvs
-export PROJECT_HOME=$HOME/Developer/Projects
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+# source /usr/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/Developer/.virtualenvs
+# export PROJECT_HOME=$HOME/Developer/Projects
 
 # Dropbox Indicator
 export DROPBOX_USE_LIBAPPINDICATOR=1
@@ -105,6 +105,9 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # ZSH Syntax Highlight
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Direnv
+eval "$(direnv hook zsh)"
 
 
 # You may need to manually set your language environment
