@@ -61,9 +61,9 @@ BULLETTRAIN_TIME_SHOW=false
 source ~/.autoenv/activate.sh
 
 # Pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+export PATH="/home/gilson/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # export TERM="xterm-256color"
 export TERM="xterm-256color"
@@ -73,6 +73,12 @@ export TERM="xterm-256color"
 # source /usr/bin/virtualenvwrapper.sh
 # export WORKON_HOME=$HOME/Developer/.virtualenvs
 # export PROJECT_HOME=$HOME/Developer/Projects
+
+# Pyenv virtualenvwrapper
+export WORKON_HOME=$HOME/Developer/.virtualenvs
+export PROJECT_HOME=$HOME/Developer/Projects/workspace
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper_lazy
 
 # Dropbox Indicator
 export DROPBOX_USE_LIBAPPINDICATOR=1
