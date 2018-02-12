@@ -92,6 +92,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'joshdick/onedark.vim'
 Plug 'trevordmiller/nova-vim'
+Plug 'joshdick/onedark.vim'
 
 " Async autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -143,6 +144,9 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'elzr/vim-json'
 
+" go
+" Go Bundle
+Plug 'fatih/vim-go'
 
 " php
 "" PHP Bundle
@@ -261,7 +265,7 @@ if !exists('g:not_finish_vimplug')
 
 	let g:onedark_termcolors=256
 
-	colorscheme nova
+	colorscheme onedark
 endif
 
 set mousemodel=popup
@@ -476,7 +480,7 @@ nnoremap <leader>e :Files<CR>
 " tags (symbols) in current file finder mapping
 nnoremap <leader>g :BTag<CR>
 " tags (symbols) in all files finder mapping
-nnoremap <leader>G :Tag<CR>
+nnoremap <leader>G :Tags<CR>
 " general code finder in current file mapping
 nnoremap <leader>f :BLines<CR>
 " general code finder in all files mapping
@@ -563,8 +567,11 @@ nnoremap <leader>t :TestFile<CR>
 "*****************************************************************************
 
 " html
-" for html files, 2 spaces
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
+" for html files, 4 spaces
+augroup vimrc-html
+    autocmd!
+    autocmd Filetype html setlocal ts=4 sw=4 expandtab foldmethod=syntax
+augroup END
 
 
 " javascript

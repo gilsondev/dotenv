@@ -57,13 +57,13 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Bullet Train
 BULLETTRAIN_TIME_SHOW=false
 
-# Autoenv
-source ~/.autoenv/activate.sh
-
 # Pyenv
 export PATH="/home/gilson/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Gvm
+source /home/gilson/.gvm/scripts/gvm
 
 # export TERM="xterm-256color"
 export TERM="xterm-256color"
@@ -77,6 +77,7 @@ export TERM="xterm-256color"
 # Pyenv virtualenvwrapper
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects/workspace
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 pyenv virtualenvwrapper_lazy
 
@@ -156,3 +157,6 @@ if command -v nvim 2>&1 >/dev/null; then
 else
     alias v='vim'
 fi
+
+# added by travis gem
+[ -f /home/gilson/.travis/travis.sh ] && source /home/gilson/.travis/travis.sh
