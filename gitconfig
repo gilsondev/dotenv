@@ -66,3 +66,5 @@
   selected = normal
   separator = red bold
   linenumber = normal
+[credential]
+	helper = cache

@@ -1,8 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Name=xflux
 Comment=Adapts screen color temperature according to daytime
+Encoding=UTF-8
 Exec=/home/gilson/.local/bin/xflux -l -15.682283 -g -47.842573
+Hidden=true
+Name=xflux
 Terminal=false
 Type=Application
+Version=1.0

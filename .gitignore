@@ -1,3 +1,9 @@
 nvim/plugged
 googlefontdirectory
 ressurect/*.txt
+proxy/*_proxy.sh
+proxy/*.sh
+fonts/
+
+env/bb_proxy.sh
+env/*_proxy.sh
