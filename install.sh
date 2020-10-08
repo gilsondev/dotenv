@@ -7,18 +7,17 @@ mkdir -p ~/.local/bin
 if [ -f /etc/debian_version ]; then
 	sudo apt-get install -y git
 	sudo apt-get install -y tmux zsh direnv
-	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo apt-get update
 	sudo apt-get install -y neovim
     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
     xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 elif [ -f /etc/redhat-release ]; then
-	sudo dnf install tmux zsh neovim
+	sudo dnf install -y tmux zsh neovim direnv
 elif [ -f /etc/fedora-release ]; then
-	sudo dnf install tmux zsh neovim ctags xclip
+	sudo dnf install -y tmux zsh neovim ctags xclip direnv
 elif [ -f /etc/arch-release ]; then
-	sudo pacman -S --noconfirm tmux zsh vim
+	sudo pacman -S --noconfirm tmux zsh neovim
 fi
 
 # Checkout this other projects

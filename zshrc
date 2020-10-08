@@ -6,6 +6,8 @@ export ZSH=/home/gilson/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="bullet-train"
+#ZSH_THEME="dracula-pro"
+
 ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
@@ -13,15 +15,10 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  package       # Package version
   node          # Node.js section
-  ruby          # Ruby section
-  golang        # Go section
   docker        # Docker section
-  aws           # Amazon Web Services section
   venv          # virtualenv section
   pyenv         # Pyenv section
-  kubecontext   # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
@@ -70,7 +67,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker dotenv emoji gitignore heroku history nvm pip python scala sbt spring vagrant docker-compose gulp bower colorize fedora)
+plugins=(git docker dotenv emoji gitignore heroku history nvm pip python vagrant docker-compose colorize dnf)
 
 # User configuration
 
@@ -80,24 +77,12 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Bullet Train
 BULLETTRAIN_TIME_SHOW=false
 
-# Proxy
-ADDRESS=$(ip -4 addr show enp4s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-PROXY_HOST="$ADDRESS"
-PROXY_PORT="3128"
-#export http_proxy="http://$PROXY_HOST:$PROXY_PORT"
-#export https_proxy="http://$PROXY_HOST:$PROXY_PORT"
-#export socks_proxy="http://$PROXY_HOST:$PROXY_PORT"
-#export no_proxy="localhost, 127.0.0.1, .bb.com.br, .example.com"
-
 # Pyenv
 export PATH="/home/gilson/.pyenv/bin:$PATH"
+export PATH="/home/gilson/.local/bin/:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Gvm
-# source /home/gilson/.gvm/scripts/gvm
-
-# export TERM="xterm-256color"
 export TERM="xterm-256color"
 
 # Pyenv virtualenvwrapper
@@ -107,8 +92,8 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 pyenv virtualenvwrapper_lazy
 
-# Dropbox Indicator
-export DROPBOX_USE_LIBAPPINDICATOR=1
+# Snaps
+export PATH="/var/lib/snapd/snap/bin:$PATH"
 
 # Oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -116,20 +101,12 @@ source $ZSH/oh-my-zsh.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Apache Ant
-export PATH="/opt/apache-ant-1.9.4/bin:$PATH"
-
 # Apache Maven
 export PATH="/opt/Java/apache-maven/bin:$PATH"
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PATH=$JAVA_HOME/bin:$PATH
-
-# Golang
-#export GOROOT="/usr/local/go"
-#export GOPATH="/mnt/WORK/Developer/go"
-#export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # NVM
 source ~/.nvm/nvm.sh
@@ -147,28 +124,17 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(direnv hook zsh)"
 
 # Poetry
-# source $HOME/.poetry/env
-
-# Spark
-export ANACONDA_ROOT="/mnt/WORK/Developer/anaconda3"
-export SPARK_HOME="$HOME/Developer/spark-2.4.0"
-export PATH="$PATH:$SPARK_HOME/bin"
-export PATH="$PATH:$SPARK_HOME/sbin"
-export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
-export PYSPARK_PYTHON="python3.7"
-export PYSPARK_DRIVER_PYTHON="jupyter-lab"
-# export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
-export SPARK_LOCAL_IP='127.0.0.1'
+source $HOME/.poetry/env
 
 # Snap
 export SNAP_HOME="/snap"
 export PATH="$PATH:$SNAP_HOME/bin"
 
-# IBus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# Default Browser (e.g.: to Yarn, etc)
+export BROWSER=/usr/bin/google-chrome-stable
 
+# Colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -192,6 +158,7 @@ export QT_IM_MODULE=ibus
 # For a full list of active aliases, run `alias`.
 #
 # aliases
+alias ls="colorls --dark"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
@@ -205,15 +172,12 @@ else
     alias v='vim'
 fi
 
-# added by travis gem
-[ -f /home/gilson/.travis/travis.sh ] && source /home/gilson/.travis/travis.sh
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/gilson/.sdkman"
 [[ -s "/home/gilson/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gilson/.sdkman/bin/sdkman-init.sh"
 
 ### Added by Zplugin's installer
-source '/home/gilson/.zplugin/bin/zplugin.zsh'
+source '/home/gilson/.zinit/bin/zplugin.zsh'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
@@ -221,3 +185,4 @@ autoload -Uz _zplugin
 zplugin light zdharma/fast-syntax-highlighting
 zplugin light zsh-users/zsh-autosuggestions
 zplugin light zsh-users/zsh-completions
+### End of Zinit's installer chunk

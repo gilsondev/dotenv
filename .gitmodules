@@ -1,6 +1,0 @@
-[submodule "powerline"]
-	path = powerline
-	url = https://github.com/powerline/powerline
-[submodule "dracula_zsh"]
-	path = dracula_zsh
-	url = https://github.com/dracula/zsh.git
