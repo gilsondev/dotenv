@@ -15,6 +15,12 @@ let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 let g:vim_bootstrap_theme = "dracula"
 let g:vim_bootstrap_frams = ""
 
+let g:python_host_prog = '/home/gilson/.pyenv/versions/tools3/bin/python'
+let g:python3_host_prog = '/home/gilson/.pyenv/versions/tools3/bin/python'
+
+" Polyglot
+let g:polyglot_disabled = ['python']
+
 if !filereadable(vimplug_exists)
   if !executable(curl_exists)
     echoerr "You have to install curl or first install vim-plug yourself!"
@@ -45,12 +51,16 @@ Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale', { 'do': 'pip install flake8 isort black' }
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Dracula PRO
+Plug '/mnt/WORK/Dracula_PRO/themes/vim', { 'as': 'dracula-pro'}
+let g:dracula_colorterm = 0
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -73,6 +83,9 @@ Plug 'xolox/vim-session'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" Complete
+Plug 'neoclide/coc.nvim', {'do': ':CocInstall coc-python'}
+
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -94,6 +107,7 @@ Plug 'jelera/vim-javascript-syntax'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'janko-m/vim-test'
 
 
 "*****************************************************************************
@@ -162,13 +176,13 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme dracula
+colorscheme dracula_pro
 
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
+set gfn=JetBrains\ Mono\ Medium:h12:w57
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -219,7 +233,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'deus'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -380,6 +394,15 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'python': [
+\       'isort',
+\       'black',
+\       'remove_trailing_lines',
+\       'trim_whitespace'
+\   ]
+\}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -463,6 +486,9 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
+" vim-test
+let g:test#python#runner = 'pytest'
+
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -483,7 +509,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 
@@ -508,9 +533,9 @@ endif
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
+  "let g:airline_left_sep          = '▶'
   let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
+  "let g:airline_right_sep         = '◀'
   let g:airline_right_alt_sep     = '«'
   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
   let g:airline#extensions#readonly#symbol   = '⊘'

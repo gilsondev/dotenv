@@ -62,6 +62,7 @@ ln -s ~/.dotenv/docker-compose_zsh ~/.oh-my-zsh/plugins/docker-compose_zsh
 ln -s ~/.dotenv/dracula_zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
 ln -s ~/.dotenv/redshift.conf ~/.config
 ln -s ~/.dotenv/nvim ~/.config
+ln -s ~/.dotenv/ideavimrc ~/.ideavimrc
 
 # Tmux Plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

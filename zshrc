@@ -83,8 +83,6 @@ export PATH="/home/gilson/.local/bin/:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export TERM="xterm-256color"
-
 # Pyenv virtualenvwrapper
 export WORKON_HOME=$HOME/Developer/.virtualenvs
 export PROJECT_HOME=$HOME/Developer/Projects/workspace
@@ -105,7 +103,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/opt/Java/apache-maven/bin:$PATH"
 
 # Java
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
 # NVM
@@ -131,7 +129,8 @@ export SNAP_HOME="/snap"
 export PATH="$PATH:$SNAP_HOME/bin"
 
 # Default Browser (e.g.: to Yarn, etc)
-export BROWSER=/usr/bin/google-chrome-stable
+# export BROWSER=/usr/bin/google-chrome-stable
+export BROWSER=/usr/bin/vivaldi-stable
 
 # Colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
@@ -163,6 +162,9 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias open="xdg-open"
 alias kderestart="killall plasmashell && kstart5 plasmashell > /dev/null 2>&1"
+
+# Define alias django manage
+[[ -s "$HOME/.local/bin/pipenv" ]] && alias manage="$(pipenv --where)/manage.py"
 
 # v: Neovim (if exists) or Vim
 if command -v nvim 2>&1 >/dev/null; then
